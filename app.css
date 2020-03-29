@@ -5,7 +5,7 @@ html,
 body {
     height: auto !important;
     min-height: 100%;
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', regular;
     background: var(--secondary-color);
     color: var(--main-text-color);
 }
@@ -26,6 +26,9 @@ body {
 .content {
     grid-area: content;
     text-align: center;
+    padding: 20px auto 20px auto;
+    background: #432534;
+    border-radius: 20px;
 }
 
 .side {
@@ -37,6 +40,10 @@ body {
     grid-area: footer;
     font-size: 0.75em;
     text-align: center;
+    color: #C44900;
+    padding: 20px auto 20px auto;
+    background: #432534;
+    border-radius: 15px;
 }
 
 .wrapper {
@@ -49,6 +56,23 @@ body {
     grid-template-rows: auto auto 1fr auto;
     height: 100%;
 }
+
+.tweet-button {
+
+}
+
+/*
+.advice-container {
+    margin: 1.5em auto; 
+}
+
+.advice-slip {
+    background: var(--tertiary-color);
+    font-family: 'Mali', cursive;
+    padding: var(--default-padding);
+    border-radius: 0.5px;
+}
+*/
 
 h1 {
     font-weight: 700;
