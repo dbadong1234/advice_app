@@ -3,13 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="voewport" content="width=device-width", initial-scale=1.0">
+        <link rel="stylesheet" href="app.css">
         <title>Advice Chat</title>
     </head>
 
     <body>
-
+    <div>
         <header class="main-head">
-            <h1>Advice Column <span>advice for life</span></h1>
+            <h1>Advice Chat </h1>
+            <h3><span>Advice for life</span></h3>
         </header>
             
         <article class="content">
@@ -19,15 +21,20 @@
         </article>
 
         <aside class="side">
-            <h2>Add reasons here</h2>
+            <h2>Add reasons this app is great here</h2>
+            <h3> reason 1 </h3>
+            <p>insert here</p>
+            <h3> reason 2 </h3>
+            <p>insert here</p>
+            <h3> reason 3 </h3>
+            <p>insert here</p>
         </aside>
 
         <footer class="main-footer">
-            <p>Powered by freeCodeCamp Chicago and Team Lazy Coffee</p>
+            <p>Powered by freeCodeCamp-Chicago and #TeamLazyCoffee</p>
         </footer>
-
+    </div>
         <p id="advice"></p>
-
         <script>
             "use strict";
 
@@ -44,8 +51,7 @@
                 const tweetButton = document.getElementById("tweet-button");
 
                 adviceElement.innerText = adviceText;
-                tweetButton.attributes.href.value = tweetURL + encodeURIComponent(adviceText);
-
+                tweetButton.attributes.href.value = tweetURL + encodeURIComponent(`"${adviceText}"`) + "-Advice Chat";
                 console.log('API JSON Data', data);
                 console.log('Advice: ', adviceText);
             });
