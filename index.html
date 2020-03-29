@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="voewport" content="width=device-width", initial-scale=1.0">
+        <title>Advice Chat</title>
+    </head>
+
+    <body>
+
+        <header class="main-head">
+            <h1>Advice Column <span>advice for life</span></h1>
+        </header>
+            
+        <article class="content">
+            <h2>Here's some advice</h2>
+            <p id="advice"></p>
+            <a href="#" id="tweet-button" target="_blank"><button>Tweet</button></a>
+        </article>
+
+        <aside class="side">
+            <h2>Add reasons here</h2>
+        </aside>
+
+        <footer class="main-footer">
+            <p>Powered by freeCodeCamp Chicago and Team Lazy Coffee</p>
+        </footer>
+
+        <p id="advice"></p>
+
+        <script>
+            "use strict";
+
+            fetch('https://api.adviceslip.com/advice')
+            .then((response) => {
+                console.log('Response: ', response);
+                return response.json();
+                })
+
+            .then((data) => {
+                const tweetURL = "https://twitter.com/intent/tweet?text=";
+                const adviceText = data.slip.advice; 
+                const adviceElement = document.getElementById("advice");
+                const tweetButton = document.getElementById("tweet-button");
+
+                adviceElement.innerText = adviceText;
+                tweetButton.attributes.href.value = tweetURL + encodeURIComponent(adviceText);
+
+                console.log('API JSON Data', data);
+                console.log('Advice: ', adviceText);
+            });
+            console.log('Hello!');
+        </script>
+    </body>
+</html>
